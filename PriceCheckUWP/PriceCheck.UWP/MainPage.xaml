@@ -9,18 +9,24 @@
     mc:Ignorable="d"
     Loaded="Page_Loaded">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" 
+          HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <Grid.RowDefinitions>
             <RowDefinition Height="100" />
+            <RowDefinition Height="50" />
             <RowDefinition Height="*" />
             <RowDefinition Height="50" />
         </Grid.RowDefinitions>
 
         <TextBlock Name="tbAppHeader" Grid.Row="0" Text="PriceCheckUWP" FontWeight="Bold" />
 
-        <ListView Name="lvProducts" Grid.Row="1">
-        </ListView>
+        <Button Name="addProductButton" Grid.Row="1" Content="Add" Click="addProductButton_Click" />
 
-        <TextBlock Name="tbSummary" Grid.Row="2" Text="All products: 3" />
+        <StackPanel Name="spProducts" Grid.Row="2" Orientation="Vertical">
+        </StackPanel>
+
+        <TextBlock Name="tbSummary" Grid.Row="3" Text="All products: 3" />
+
+        <Popup Name="dialogPopup" Grid.RowSpan="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
     </Grid>
 </Page>

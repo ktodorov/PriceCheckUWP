@@ -1,0 +1,27 @@
+﻿<UserControl
+    x:Class="PriceCheck.UWP.UserControls.AddProductControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PriceCheck.UWP.UserControls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    HorizontalAlignment="Stretch"
+    VerticalAlignment="Stretch">
+
+    <Border Background="White">
+        <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <TextBlock Name="tbProductNameLabel" Text="Name" />
+            <TextBox Name="tbProductName" />
+            <TextBlock Name="tbProductUrlLabel" Text="URL" />
+            <TextBox Name="tbProductUrl" />
+            <TextBlock Name="tbProductDescriptionLabel" Text="Description" />
+            <TextBox Name="tbProductDescription" />
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Name="saveButton" Content="Save" Margin="10" Click="saveButton_Click" />
+                <Button Name="cancelButton" Content="Cancel" Margin="10" Click="cancelButton_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Border>
+</UserControl>

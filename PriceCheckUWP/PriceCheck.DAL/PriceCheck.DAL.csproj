@@ -112,14 +112,15 @@
     <Compile Include="Entities\PriceChange.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Enums\Website.cs" />
-    <Compile Include="Migrations\20170318113802_InitialCreate.cs" />
-    <Compile Include="Migrations\20170318113802_InitialCreate.designer.cs">
-      <DependentUpon>20170318113802_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\20170318133150_InitialCreate.cs" />
+    <Compile Include="Migrations\20170318133150_InitialCreate.designer.cs">
+      <DependentUpon>20170318133150_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\PriceCheckContextModelSnapshot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\PriceCheck.Core.rd.xml" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

@@ -1,4 +1,5 @@
-﻿using PriceCheck.Core.Entities;
+﻿using PriceCheck.DAL.Context;
+using PriceCheck.DAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -20,6 +21,8 @@ namespace PriceCheck.UWP.UserControls
 {
     public sealed partial class ProductControl : UserControl
     {
+        private Product AttachedProduct;
+
         public ProductControl()
         {
             this.InitializeComponent();
@@ -28,14 +31,19 @@ namespace PriceCheck.UWP.UserControls
         public ProductControl(Product product)
         {
             this.InitializeComponent();
-
-            ProductWebsite = product.Url;
+            AttachedProduct = product;
+            mainGrid.DataContext = AttachedProduct;
         }
 
-        public string ProductName { get; set; }
+        private async void deleteProductButton_Click(object sender, RoutedEventArgs e)
+        {
+            using (var pcContext = new PriceCheckContext())
+            {
+                pcContext.Products.Remove(AttachedProduct);
+                await pcContext.SaveChangesAsync();
+            }
 
-        public string ProductWebsite { get; set; }
-
-        public string ProductDescription { get; set; }
+            ((Panel)this.Parent).Children.Remove(this);
+        }
     }
 }

@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PriceCheck.Core.Context;
+using PriceCheck.DAL.Context;
 using System;
 using System.Collections.Generic;
 using System.IO;

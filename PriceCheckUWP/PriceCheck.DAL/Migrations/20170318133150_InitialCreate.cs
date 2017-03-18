@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace PriceCheck.Core.Migrations
+namespace PriceCheck.DAL.Migrations
 {
     public partial class InitialCreate : Migration
     {
@@ -14,6 +14,8 @@ namespace PriceCheck.Core.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
+                    Description = table.Column<string>(nullable: true),
+                    Name = table.Column<string>(nullable: true),
                     Url = table.Column<string>(nullable: true),
                     Website = table.Column<int>(nullable: false)
                 },

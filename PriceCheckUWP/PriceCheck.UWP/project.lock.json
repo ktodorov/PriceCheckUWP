@@ -2788,7 +2788,7 @@
           }
         }
       },
-      "PriceCheck.Core/1.0.0": {
+      "PriceCheck.DAL/1.0.0": {
         "type": "project",
         "framework": "UAP,Version=v10.0",
         "dependencies": {
@@ -5588,7 +5588,7 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "PriceCheck.Core/1.0.0": {
+      "PriceCheck.DAL/1.0.0": {
         "type": "project",
         "framework": "UAP,Version=v10.0",
         "dependencies": {
@@ -8427,7 +8427,7 @@
           "runtimes/aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "PriceCheck.Core/1.0.0": {
+      "PriceCheck.DAL/1.0.0": {
         "type": "project",
         "framework": "UAP,Version=v10.0",
         "dependencies": {
@@ -11236,7 +11236,7 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "PriceCheck.Core/1.0.0": {
+      "PriceCheck.DAL/1.0.0": {
         "type": "project",
         "framework": "UAP,Version=v10.0",
         "dependencies": {
@@ -14084,7 +14084,7 @@
           "runtimes/aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "PriceCheck.Core/1.0.0": {
+      "PriceCheck.DAL/1.0.0": {
         "type": "project",
         "framework": "UAP,Version=v10.0",
         "dependencies": {
@@ -16893,7 +16893,7 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "PriceCheck.Core/1.0.0": {
+      "PriceCheck.DAL/1.0.0": {
         "type": "project",
         "framework": "UAP,Version=v10.0",
         "dependencies": {
@@ -19741,7 +19741,7 @@
           "runtimes/aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "PriceCheck.Core/1.0.0": {
+      "PriceCheck.DAL/1.0.0": {
         "type": "project",
         "framework": "UAP,Version=v10.0",
         "dependencies": {
@@ -28672,10 +28672,10 @@
         "runtimes/aot/lib/netcore50/System.Xml.XmlSerializer.dll"
       ]
     },
-    "PriceCheck.Core/1.0.0": {
+    "PriceCheck.DAL/1.0.0": {
       "type": "project",
-      "path": "../PriceCheck.Core/project.json",
-      "msbuildProject": "../PriceCheck.Core/PriceCheck.Core.csproj"
+      "path": "../PriceCheck.DAL/project.json",
+      "msbuildProject": "../PriceCheck.DAL/PriceCheck.DAL.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -28697,8 +28697,8 @@
       "frameworks": {
         "uap10.0": {
           "projectReferences": {
-            "E:\\OneDrive\\Work\\PriceCheckUWP\\PriceCheckUWP\\PriceCheck.Core\\PriceCheck.Core.csproj": {
-              "projectPath": "E:\\OneDrive\\Work\\PriceCheckUWP\\PriceCheckUWP\\PriceCheck.Core\\PriceCheck.Core.csproj"
+            "E:\\OneDrive\\Work\\PriceCheckUWP\\PriceCheckUWP\\PriceCheck.DAL\\PriceCheck.DAL.csproj": {
+              "projectPath": "E:\\OneDrive\\Work\\PriceCheckUWP\\PriceCheckUWP\\PriceCheck.DAL\\PriceCheck.DAL.csproj"
             }
           }
         }

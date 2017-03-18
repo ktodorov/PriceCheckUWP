@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.4
+VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceCheck.Core", "PriceCheck.Core\PriceCheck.Core.csproj", "{3298A63C-7E5E-4469-9A9C-A751CC3677D7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceCheck.DAL", "PriceCheck.DAL\PriceCheck.DAL.csproj", "{3298A63C-7E5E-4469-9A9C-A751CC3677D7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceCheck.UWP", "PriceCheck.UWP\PriceCheck.UWP.csproj", "{49FD6D2F-5A3D-455C-8E9F-DC7D6E9D2823}"
 	ProjectSection(ProjectDependencies) = postProject

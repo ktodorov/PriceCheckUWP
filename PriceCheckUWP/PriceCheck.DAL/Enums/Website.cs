@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PriceCheck.Core.Enums
+namespace PriceCheck.DAL.Enums
 {
     public enum Website
     {
