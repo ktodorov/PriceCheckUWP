@@ -32,17 +32,17 @@ namespace PriceCheck.UWP
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            //using (var db = new PriceCheckContext())
-            //{
-            //    var currentProducts = db.Products.ToList();
-            //    foreach (var product in currentProducts)
-            //    {
-            //        var productControl = new ProductControl(product);
-            //        lvProducts.Items.Add(productControl);
-            //    }
+            using (var db = new PriceCheckContext())
+            {
+                var currentProducts = db.Products.ToList();
+                foreach (var product in currentProducts)
+                {
+                    var productControl = new ProductControl(product);
+                    lvProducts.Items.Add(productControl);
+                }
 
-            //    tbSummary.Text = $"All products: {currentProducts.Count}";
-            //}
+                tbSummary.Text = $"All products: {currentProducts.Count}";
+            }
         }
 
         private void Add_Click(object sender, RoutedEventArgs e)
