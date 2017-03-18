@@ -1,0 +1,30 @@
+﻿<UserControl
+    x:Class="PriceCheck.UWP.UserControls.ProductControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PriceCheck.UWP.UserControls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    DataContext="{Binding RelativeSource={RelativeSource Self}}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
+
+        <Image Name="productImage" Grid.RowSpan="3" Grid.Column="0" />
+
+        <TextBlock Name="tbProductName" Grid.Row="0" Grid.Column="1" FontWeight="Bold" Text="{Binding ProductName}" />
+
+        <TextBlock Name="tbProductWebsite" Grid.Row="1" Grid.Column="1" FontStyle="Italic" Text="{Binding ProductWebsite}" />
+
+        <TextBlock Name="tbProductDescription" Grid.Row="2" Grid.Column="2" Text="{Binding ProductDescription}"/>
+    </Grid>
+</UserControl>
