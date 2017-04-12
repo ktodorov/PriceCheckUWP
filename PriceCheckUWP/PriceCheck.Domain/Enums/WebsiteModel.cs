@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PriceCheck.Data.Enums
+namespace PriceCheck.Domain.Enums
 {
-    public enum Website
+    public enum WebsiteModel
     {
         Emag = 0,
         Technopolis = 1,

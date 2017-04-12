@@ -27,7 +27,9 @@
 
         <TextBlock Name="tbProductDescription" Grid.Row="2" Grid.Column="1" Text="{Binding Description}"/>
 
-        <Button Name="deleteProductButton" Grid.RowSpan="3" Grid.Column="2" Content="Delete"
-                Click="deleteProductButton_Click" />
+        <StackPanel Grid.Column="2" Grid.RowSpan="3">
+            <Button Name="editProductButton" Content="Edit" Click="editProductButton_Click" />
+            <Button Name="deleteProductButton" Content="Delete" Click="deleteProductButton_Click" />
+        </StackPanel>
     </Grid>
 </UserControl>

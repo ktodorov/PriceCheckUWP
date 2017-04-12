@@ -1,6 +1,4 @@
-﻿using PriceCheck.DAL.Context;
-using PriceCheck.DAL.Entities;
-using PriceCheck.UWP.UserControls;
+﻿using PriceCheck.UWP.UserControls;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -39,17 +37,17 @@ namespace PriceCheck.UWP
         {
             spProducts.Children.Clear();
 
-            using (var db = new PriceCheckContext())
-            {
-                var currentProducts = db.Products.ToList();
-                foreach (var product in currentProducts)
-                {
-                    var productControl = new ProductControl(product);
-                    spProducts.Children.Add(productControl);
-                }
+            //using (var db = new PriceCheckContext())
+            //{
+            //    var currentProducts = db.Products.ToList();
+            //    foreach (var product in currentProducts)
+            //    {
+            //        var productControl = new ProductControl(product);
+            //        spProducts.Children.Add(productControl);
+            //    }
 
-                tbSummary.Text = $"All products: {currentProducts.Count}";
-            }
+            //    tbSummary.Text = $"All products: {currentProducts.Count}";
+            //}
         }
 
         private void addProductButton_Click(object sender, RoutedEventArgs e)

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PriceCheck.DAL.Entities
+namespace PriceCheck.Data.Entities
 {
     public class PriceChange : EntityBase
     {

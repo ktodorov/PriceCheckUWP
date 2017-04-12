@@ -4,14 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3298A63C-7E5E-4469-9A9C-A751CC3677D7}</ProjectGuid>
+    <ProjectGuid>{24E0BE19-C53F-4D27-B3E7-40763A27757F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PriceCheck.Core</RootNamespace>
-    <AssemblyName>PriceCheck.Core</AssemblyName>
+    <RootNamespace>PriceCheck.Domain</RootNamespace>
+    <AssemblyName>PriceCheck.Domain</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion>10.0.14393.0</TargetPlatformVersion>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.14393.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.10586.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
@@ -107,20 +107,13 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Context\PriceCheckContext.cs" />
-    <Compile Include="Entities\EntityBase.cs" />
-    <Compile Include="Entities\PriceChange.cs" />
-    <Compile Include="Entities\Product.cs" />
-    <Compile Include="Enums\Website.cs" />
-    <Compile Include="Migrations\20170318133150_InitialCreate.cs" />
-    <Compile Include="Migrations\20170318133150_InitialCreate.designer.cs">
-      <DependentUpon>20170318133150_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\PriceCheckContextModelSnapshot.cs" />
+    <Compile Include="Enums\WebsiteModel.cs" />
+    <Compile Include="Models\ModelBase.cs" />
+    <Compile Include="Models\PriceChangeModel.cs" />
+    <Compile Include="Models\ProductModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Properties\PriceCheck.Core.rd.xml" />
+    <EmbeddedResource Include="Properties\PriceCheck.Domain.rd.xml" />
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

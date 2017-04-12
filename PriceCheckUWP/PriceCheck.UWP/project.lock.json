@@ -2,6 +2,35 @@
   "version": 2,
   "targets": {
     "UAP,Version=v10.0": {
+      "AutoMapper/6.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.3.0",
+          "System.Collections": "4.3.0",
+          "System.Collections.Concurrent": "4.3.0",
+          "System.Collections.Specialized": "4.3.0",
+          "System.ComponentModel.TypeConverter": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Dynamic.Runtime": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Linq.Expressions": "4.3.0",
+          "System.Linq.Queryable": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Extensions": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Text.RegularExpressions": "4.3.0",
+          "System.Threading": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/AutoMapper.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/AutoMapper.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Hosting.Abstractions/1.1.1": {
         "type": "package",
         "dependencies": {
@@ -333,7 +362,7 @@
           "lib/netstandard1.0/Microsoft.Extensions.Primitives.dll": {}
         }
       },
-      "Microsoft.Net.Native.Compiler/1.6.0": {
+      "Microsoft.Net.Native.Compiler/1.6.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.Net.Native.SharedLibrary-arm": "1.6.0",
@@ -543,14 +572,14 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.NETCore.UniversalWindowsPlatform/5.3.1": {
+      "Microsoft.NETCore.UniversalWindowsPlatform/5.3.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore": "5.0.2",
           "Microsoft.NETCore.Portable.Compatibility": "1.0.2",
           "Microsoft.NETCore.Runtime.CoreCLR": "1.0.3",
           "Microsoft.NETCore.Targets": "1.0.2",
-          "Microsoft.Net.Native.Compiler": "1.6.0",
+          "Microsoft.Net.Native.Compiler": "1.6.1",
           "Microsoft.Win32.Primitives": "4.0.1",
           "System.Collections.NonGeneric": "4.0.1",
           "System.Collections.Specialized": "4.0.1",
@@ -950,16 +979,16 @@
           "lib/netstandard1.3/System.Collections.NonGeneric.dll": {}
         }
       },
-      "System.Collections.Specialized/4.0.1": {
+      "System.Collections.Specialized/4.3.0": {
         "type": "package",
         "dependencies": {
-          "System.Collections.NonGeneric": "4.0.1",
-          "System.Globalization": "4.0.11",
-          "System.Globalization.Extensions": "4.0.1",
-          "System.Resources.ResourceManager": "4.0.1",
-          "System.Runtime": "4.1.0",
-          "System.Runtime.Extensions": "4.1.0",
-          "System.Threading": "4.0.11"
+          "System.Collections.NonGeneric": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Globalization.Extensions": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Threading": "4.3.0"
         },
         "compile": {
           "ref/netstandard1.3/System.Collections.Specialized.dll": {}
@@ -1015,6 +1044,27 @@
         },
         "runtime": {
           "lib/netcore50/System.ComponentModel.EventBasedAsync.dll": {}
+        }
+      },
+      "System.ComponentModel.Primitives/4.3.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard1.0/System.ComponentModel.Primitives.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/System.ComponentModel.Primitives.dll": {}
+        }
+      },
+      "System.ComponentModel.TypeConverter/4.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.ComponentModel.Primitives": "4.3.0"
+        },
+        "compile": {
+          "ref/netstandard1.0/System.ComponentModel.TypeConverter.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/System.ComponentModel.TypeConverter.dll": {}
         }
       },
       "System.Console/4.3.0": {
@@ -2788,17 +2838,63 @@
           }
         }
       },
-      "PriceCheck.DAL/1.0.0": {
+      "PriceCheck.Business/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "AutoMapper": "6.0.2",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2",
+          "PriceCheck.Data": "1.0.0",
+          "PriceCheck.Domain": "1.0.0"
+        }
+      },
+      "PriceCheck.Data/1.0.0": {
         "type": "project",
         "framework": "UAP,Version=v10.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Sqlite": "1.1.1",
           "Microsoft.EntityFrameworkCore.Tools": "1.1.0",
-          "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.1"
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2"
+        }
+      },
+      "PriceCheck.Domain/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2"
         }
       }
     },
     "UAP,Version=v10.0/win10-arm": {
+      "AutoMapper/6.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.3.0",
+          "System.Collections": "4.3.0",
+          "System.Collections.Concurrent": "4.3.0",
+          "System.Collections.Specialized": "4.3.0",
+          "System.ComponentModel.TypeConverter": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Dynamic.Runtime": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Linq.Expressions": "4.3.0",
+          "System.Linq.Queryable": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Extensions": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Text.RegularExpressions": "4.3.0",
+          "System.Threading": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/AutoMapper.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/AutoMapper.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Hosting.Abstractions/1.1.1": {
         "type": "package",
         "dependencies": {
@@ -3130,7 +3226,7 @@
           "lib/netstandard1.0/Microsoft.Extensions.Primitives.dll": {}
         }
       },
-      "Microsoft.Net.Native.Compiler/1.6.0": {
+      "Microsoft.Net.Native.Compiler/1.6.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.Net.Native.SharedLibrary-arm": "1.6.0",
@@ -3287,14 +3383,14 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.NETCore.UniversalWindowsPlatform/5.3.1": {
+      "Microsoft.NETCore.UniversalWindowsPlatform/5.3.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore": "5.0.2",
           "Microsoft.NETCore.Portable.Compatibility": "1.0.2",
           "Microsoft.NETCore.Runtime.CoreCLR": "1.0.3",
           "Microsoft.NETCore.Targets": "1.0.2",
-          "Microsoft.Net.Native.Compiler": "1.6.0",
+          "Microsoft.Net.Native.Compiler": "1.6.1",
           "Microsoft.Win32.Primitives": "4.0.1",
           "System.Collections.NonGeneric": "4.0.1",
           "System.Collections.Specialized": "4.0.1",
@@ -3929,16 +4025,16 @@
           "lib/netstandard1.3/System.Collections.NonGeneric.dll": {}
         }
       },
-      "System.Collections.Specialized/4.0.1": {
+      "System.Collections.Specialized/4.3.0": {
         "type": "package",
         "dependencies": {
-          "System.Collections.NonGeneric": "4.0.1",
-          "System.Globalization": "4.0.11",
-          "System.Globalization.Extensions": "4.0.1",
-          "System.Resources.ResourceManager": "4.0.1",
-          "System.Runtime": "4.1.0",
-          "System.Runtime.Extensions": "4.1.0",
-          "System.Threading": "4.0.11"
+          "System.Collections.NonGeneric": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Globalization.Extensions": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Threading": "4.3.0"
         },
         "compile": {
           "ref/netstandard1.3/System.Collections.Specialized.dll": {}
@@ -3994,6 +4090,27 @@
         },
         "runtime": {
           "lib/netcore50/System.ComponentModel.EventBasedAsync.dll": {}
+        }
+      },
+      "System.ComponentModel.Primitives/4.3.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard1.0/System.ComponentModel.Primitives.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/System.ComponentModel.Primitives.dll": {}
+        }
+      },
+      "System.ComponentModel.TypeConverter/4.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.ComponentModel.Primitives": "4.3.0"
+        },
+        "compile": {
+          "ref/netstandard1.0/System.ComponentModel.TypeConverter.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/System.ComponentModel.TypeConverter.dll": {}
         }
       },
       "System.Console/4.3.0": {
@@ -5588,17 +5705,63 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "PriceCheck.DAL/1.0.0": {
+      "PriceCheck.Business/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "AutoMapper": "6.0.2",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2",
+          "PriceCheck.Data": "1.0.0",
+          "PriceCheck.Domain": "1.0.0"
+        }
+      },
+      "PriceCheck.Data/1.0.0": {
         "type": "project",
         "framework": "UAP,Version=v10.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Sqlite": "1.1.1",
           "Microsoft.EntityFrameworkCore.Tools": "1.1.0",
-          "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.1"
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2"
+        }
+      },
+      "PriceCheck.Domain/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2"
         }
       }
     },
     "UAP,Version=v10.0/win10-arm-aot": {
+      "AutoMapper/6.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.3.0",
+          "System.Collections": "4.3.0",
+          "System.Collections.Concurrent": "4.3.0",
+          "System.Collections.Specialized": "4.3.0",
+          "System.ComponentModel.TypeConverter": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Dynamic.Runtime": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Linq.Expressions": "4.3.0",
+          "System.Linq.Queryable": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Extensions": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Text.RegularExpressions": "4.3.0",
+          "System.Threading": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/AutoMapper.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/AutoMapper.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Hosting.Abstractions/1.1.1": {
         "type": "package",
         "dependencies": {
@@ -5930,7 +6093,7 @@
           "lib/netstandard1.0/Microsoft.Extensions.Primitives.dll": {}
         }
       },
-      "Microsoft.Net.Native.Compiler/1.6.0": {
+      "Microsoft.Net.Native.Compiler/1.6.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.Net.Native.SharedLibrary-arm": "1.6.0",
@@ -6088,14 +6251,14 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.NETCore.UniversalWindowsPlatform/5.3.1": {
+      "Microsoft.NETCore.UniversalWindowsPlatform/5.3.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore": "5.0.2",
           "Microsoft.NETCore.Portable.Compatibility": "1.0.2",
           "Microsoft.NETCore.Runtime.CoreCLR": "1.0.3",
           "Microsoft.NETCore.Targets": "1.0.2",
-          "Microsoft.Net.Native.Compiler": "1.6.0",
+          "Microsoft.Net.Native.Compiler": "1.6.1",
           "Microsoft.Win32.Primitives": "4.0.1",
           "System.Collections.NonGeneric": "4.0.1",
           "System.Collections.Specialized": "4.0.1",
@@ -6768,16 +6931,16 @@
           "lib/netstandard1.3/System.Collections.NonGeneric.dll": {}
         }
       },
-      "System.Collections.Specialized/4.0.1": {
+      "System.Collections.Specialized/4.3.0": {
         "type": "package",
         "dependencies": {
-          "System.Collections.NonGeneric": "4.0.1",
-          "System.Globalization": "4.0.11",
-          "System.Globalization.Extensions": "4.0.1",
-          "System.Resources.ResourceManager": "4.0.1",
-          "System.Runtime": "4.1.0",
-          "System.Runtime.Extensions": "4.1.0",
-          "System.Threading": "4.0.11"
+          "System.Collections.NonGeneric": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Globalization.Extensions": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Threading": "4.3.0"
         },
         "compile": {
           "ref/netstandard1.3/System.Collections.Specialized.dll": {}
@@ -6833,6 +6996,27 @@
         },
         "runtime": {
           "lib/netcore50/System.ComponentModel.EventBasedAsync.dll": {}
+        }
+      },
+      "System.ComponentModel.Primitives/4.3.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard1.0/System.ComponentModel.Primitives.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/System.ComponentModel.Primitives.dll": {}
+        }
+      },
+      "System.ComponentModel.TypeConverter/4.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.ComponentModel.Primitives": "4.3.0"
+        },
+        "compile": {
+          "ref/netstandard1.0/System.ComponentModel.TypeConverter.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/System.ComponentModel.TypeConverter.dll": {}
         }
       },
       "System.Console/4.3.0": {
@@ -8427,17 +8611,63 @@
           "runtimes/aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "PriceCheck.DAL/1.0.0": {
+      "PriceCheck.Business/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "AutoMapper": "6.0.2",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2",
+          "PriceCheck.Data": "1.0.0",
+          "PriceCheck.Domain": "1.0.0"
+        }
+      },
+      "PriceCheck.Data/1.0.0": {
         "type": "project",
         "framework": "UAP,Version=v10.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Sqlite": "1.1.1",
           "Microsoft.EntityFrameworkCore.Tools": "1.1.0",
-          "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.1"
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2"
+        }
+      },
+      "PriceCheck.Domain/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2"
         }
       }
     },
     "UAP,Version=v10.0/win10-x64": {
+      "AutoMapper/6.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.3.0",
+          "System.Collections": "4.3.0",
+          "System.Collections.Concurrent": "4.3.0",
+          "System.Collections.Specialized": "4.3.0",
+          "System.ComponentModel.TypeConverter": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Dynamic.Runtime": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Linq.Expressions": "4.3.0",
+          "System.Linq.Queryable": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Extensions": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Text.RegularExpressions": "4.3.0",
+          "System.Threading": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/AutoMapper.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/AutoMapper.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Hosting.Abstractions/1.1.1": {
         "type": "package",
         "dependencies": {
@@ -8769,7 +8999,7 @@
           "lib/netstandard1.0/Microsoft.Extensions.Primitives.dll": {}
         }
       },
-      "Microsoft.Net.Native.Compiler/1.6.0": {
+      "Microsoft.Net.Native.Compiler/1.6.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.Net.Native.SharedLibrary-arm": "1.6.0",
@@ -8929,14 +9159,14 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.NETCore.UniversalWindowsPlatform/5.3.1": {
+      "Microsoft.NETCore.UniversalWindowsPlatform/5.3.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore": "5.0.2",
           "Microsoft.NETCore.Portable.Compatibility": "1.0.2",
           "Microsoft.NETCore.Runtime.CoreCLR": "1.0.3",
           "Microsoft.NETCore.Targets": "1.0.2",
-          "Microsoft.Net.Native.Compiler": "1.6.0",
+          "Microsoft.Net.Native.Compiler": "1.6.1",
           "Microsoft.Win32.Primitives": "4.0.1",
           "System.Collections.NonGeneric": "4.0.1",
           "System.Collections.Specialized": "4.0.1",
@@ -9577,16 +9807,16 @@
           "lib/netstandard1.3/System.Collections.NonGeneric.dll": {}
         }
       },
-      "System.Collections.Specialized/4.0.1": {
+      "System.Collections.Specialized/4.3.0": {
         "type": "package",
         "dependencies": {
-          "System.Collections.NonGeneric": "4.0.1",
-          "System.Globalization": "4.0.11",
-          "System.Globalization.Extensions": "4.0.1",
-          "System.Resources.ResourceManager": "4.0.1",
-          "System.Runtime": "4.1.0",
-          "System.Runtime.Extensions": "4.1.0",
-          "System.Threading": "4.0.11"
+          "System.Collections.NonGeneric": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Globalization.Extensions": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Threading": "4.3.0"
         },
         "compile": {
           "ref/netstandard1.3/System.Collections.Specialized.dll": {}
@@ -9642,6 +9872,27 @@
         },
         "runtime": {
           "lib/netcore50/System.ComponentModel.EventBasedAsync.dll": {}
+        }
+      },
+      "System.ComponentModel.Primitives/4.3.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard1.0/System.ComponentModel.Primitives.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/System.ComponentModel.Primitives.dll": {}
+        }
+      },
+      "System.ComponentModel.TypeConverter/4.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.ComponentModel.Primitives": "4.3.0"
+        },
+        "compile": {
+          "ref/netstandard1.0/System.ComponentModel.TypeConverter.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/System.ComponentModel.TypeConverter.dll": {}
         }
       },
       "System.Console/4.3.0": {
@@ -11236,17 +11487,63 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "PriceCheck.DAL/1.0.0": {
+      "PriceCheck.Business/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "AutoMapper": "6.0.2",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2",
+          "PriceCheck.Data": "1.0.0",
+          "PriceCheck.Domain": "1.0.0"
+        }
+      },
+      "PriceCheck.Data/1.0.0": {
         "type": "project",
         "framework": "UAP,Version=v10.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Sqlite": "1.1.1",
           "Microsoft.EntityFrameworkCore.Tools": "1.1.0",
-          "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.1"
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2"
+        }
+      },
+      "PriceCheck.Domain/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2"
         }
       }
     },
     "UAP,Version=v10.0/win10-x64-aot": {
+      "AutoMapper/6.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.3.0",
+          "System.Collections": "4.3.0",
+          "System.Collections.Concurrent": "4.3.0",
+          "System.Collections.Specialized": "4.3.0",
+          "System.ComponentModel.TypeConverter": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Dynamic.Runtime": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Linq.Expressions": "4.3.0",
+          "System.Linq.Queryable": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Extensions": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Text.RegularExpressions": "4.3.0",
+          "System.Threading": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/AutoMapper.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/AutoMapper.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Hosting.Abstractions/1.1.1": {
         "type": "package",
         "dependencies": {
@@ -11578,7 +11875,7 @@
           "lib/netstandard1.0/Microsoft.Extensions.Primitives.dll": {}
         }
       },
-      "Microsoft.Net.Native.Compiler/1.6.0": {
+      "Microsoft.Net.Native.Compiler/1.6.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.Net.Native.SharedLibrary-arm": "1.6.0",
@@ -11739,14 +12036,14 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.NETCore.UniversalWindowsPlatform/5.3.1": {
+      "Microsoft.NETCore.UniversalWindowsPlatform/5.3.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore": "5.0.2",
           "Microsoft.NETCore.Portable.Compatibility": "1.0.2",
           "Microsoft.NETCore.Runtime.CoreCLR": "1.0.3",
           "Microsoft.NETCore.Targets": "1.0.2",
-          "Microsoft.Net.Native.Compiler": "1.6.0",
+          "Microsoft.Net.Native.Compiler": "1.6.1",
           "Microsoft.Win32.Primitives": "4.0.1",
           "System.Collections.NonGeneric": "4.0.1",
           "System.Collections.Specialized": "4.0.1",
@@ -12425,16 +12722,16 @@
           "lib/netstandard1.3/System.Collections.NonGeneric.dll": {}
         }
       },
-      "System.Collections.Specialized/4.0.1": {
+      "System.Collections.Specialized/4.3.0": {
         "type": "package",
         "dependencies": {
-          "System.Collections.NonGeneric": "4.0.1",
-          "System.Globalization": "4.0.11",
-          "System.Globalization.Extensions": "4.0.1",
-          "System.Resources.ResourceManager": "4.0.1",
-          "System.Runtime": "4.1.0",
-          "System.Runtime.Extensions": "4.1.0",
-          "System.Threading": "4.0.11"
+          "System.Collections.NonGeneric": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Globalization.Extensions": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Threading": "4.3.0"
         },
         "compile": {
           "ref/netstandard1.3/System.Collections.Specialized.dll": {}
@@ -12490,6 +12787,27 @@
         },
         "runtime": {
           "lib/netcore50/System.ComponentModel.EventBasedAsync.dll": {}
+        }
+      },
+      "System.ComponentModel.Primitives/4.3.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard1.0/System.ComponentModel.Primitives.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/System.ComponentModel.Primitives.dll": {}
+        }
+      },
+      "System.ComponentModel.TypeConverter/4.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.ComponentModel.Primitives": "4.3.0"
+        },
+        "compile": {
+          "ref/netstandard1.0/System.ComponentModel.TypeConverter.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/System.ComponentModel.TypeConverter.dll": {}
         }
       },
       "System.Console/4.3.0": {
@@ -14084,17 +14402,63 @@
           "runtimes/aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "PriceCheck.DAL/1.0.0": {
+      "PriceCheck.Business/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "AutoMapper": "6.0.2",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2",
+          "PriceCheck.Data": "1.0.0",
+          "PriceCheck.Domain": "1.0.0"
+        }
+      },
+      "PriceCheck.Data/1.0.0": {
         "type": "project",
         "framework": "UAP,Version=v10.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Sqlite": "1.1.1",
           "Microsoft.EntityFrameworkCore.Tools": "1.1.0",
-          "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.1"
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2"
+        }
+      },
+      "PriceCheck.Domain/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2"
         }
       }
     },
     "UAP,Version=v10.0/win10-x86": {
+      "AutoMapper/6.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.3.0",
+          "System.Collections": "4.3.0",
+          "System.Collections.Concurrent": "4.3.0",
+          "System.Collections.Specialized": "4.3.0",
+          "System.ComponentModel.TypeConverter": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Dynamic.Runtime": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Linq.Expressions": "4.3.0",
+          "System.Linq.Queryable": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Extensions": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Text.RegularExpressions": "4.3.0",
+          "System.Threading": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/AutoMapper.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/AutoMapper.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Hosting.Abstractions/1.1.1": {
         "type": "package",
         "dependencies": {
@@ -14426,7 +14790,7 @@
           "lib/netstandard1.0/Microsoft.Extensions.Primitives.dll": {}
         }
       },
-      "Microsoft.Net.Native.Compiler/1.6.0": {
+      "Microsoft.Net.Native.Compiler/1.6.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.Net.Native.SharedLibrary-arm": "1.6.0",
@@ -14586,14 +14950,14 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.NETCore.UniversalWindowsPlatform/5.3.1": {
+      "Microsoft.NETCore.UniversalWindowsPlatform/5.3.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore": "5.0.2",
           "Microsoft.NETCore.Portable.Compatibility": "1.0.2",
           "Microsoft.NETCore.Runtime.CoreCLR": "1.0.3",
           "Microsoft.NETCore.Targets": "1.0.2",
-          "Microsoft.Net.Native.Compiler": "1.6.0",
+          "Microsoft.Net.Native.Compiler": "1.6.1",
           "Microsoft.Win32.Primitives": "4.0.1",
           "System.Collections.NonGeneric": "4.0.1",
           "System.Collections.Specialized": "4.0.1",
@@ -15234,16 +15598,16 @@
           "lib/netstandard1.3/System.Collections.NonGeneric.dll": {}
         }
       },
-      "System.Collections.Specialized/4.0.1": {
+      "System.Collections.Specialized/4.3.0": {
         "type": "package",
         "dependencies": {
-          "System.Collections.NonGeneric": "4.0.1",
-          "System.Globalization": "4.0.11",
-          "System.Globalization.Extensions": "4.0.1",
-          "System.Resources.ResourceManager": "4.0.1",
-          "System.Runtime": "4.1.0",
-          "System.Runtime.Extensions": "4.1.0",
-          "System.Threading": "4.0.11"
+          "System.Collections.NonGeneric": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Globalization.Extensions": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Threading": "4.3.0"
         },
         "compile": {
           "ref/netstandard1.3/System.Collections.Specialized.dll": {}
@@ -15299,6 +15663,27 @@
         },
         "runtime": {
           "lib/netcore50/System.ComponentModel.EventBasedAsync.dll": {}
+        }
+      },
+      "System.ComponentModel.Primitives/4.3.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard1.0/System.ComponentModel.Primitives.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/System.ComponentModel.Primitives.dll": {}
+        }
+      },
+      "System.ComponentModel.TypeConverter/4.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.ComponentModel.Primitives": "4.3.0"
+        },
+        "compile": {
+          "ref/netstandard1.0/System.ComponentModel.TypeConverter.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/System.ComponentModel.TypeConverter.dll": {}
         }
       },
       "System.Console/4.3.0": {
@@ -16893,17 +17278,63 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "PriceCheck.DAL/1.0.0": {
+      "PriceCheck.Business/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "AutoMapper": "6.0.2",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2",
+          "PriceCheck.Data": "1.0.0",
+          "PriceCheck.Domain": "1.0.0"
+        }
+      },
+      "PriceCheck.Data/1.0.0": {
         "type": "project",
         "framework": "UAP,Version=v10.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Sqlite": "1.1.1",
           "Microsoft.EntityFrameworkCore.Tools": "1.1.0",
-          "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.1"
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2"
+        }
+      },
+      "PriceCheck.Domain/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2"
         }
       }
     },
     "UAP,Version=v10.0/win10-x86-aot": {
+      "AutoMapper/6.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.3.0",
+          "System.Collections": "4.3.0",
+          "System.Collections.Concurrent": "4.3.0",
+          "System.Collections.Specialized": "4.3.0",
+          "System.ComponentModel.TypeConverter": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Dynamic.Runtime": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Linq.Expressions": "4.3.0",
+          "System.Linq.Queryable": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Extensions": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Text.RegularExpressions": "4.3.0",
+          "System.Threading": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/AutoMapper.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/AutoMapper.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Hosting.Abstractions/1.1.1": {
         "type": "package",
         "dependencies": {
@@ -17235,7 +17666,7 @@
           "lib/netstandard1.0/Microsoft.Extensions.Primitives.dll": {}
         }
       },
-      "Microsoft.Net.Native.Compiler/1.6.0": {
+      "Microsoft.Net.Native.Compiler/1.6.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.Net.Native.SharedLibrary-arm": "1.6.0",
@@ -17396,14 +17827,14 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.NETCore.UniversalWindowsPlatform/5.3.1": {
+      "Microsoft.NETCore.UniversalWindowsPlatform/5.3.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore": "5.0.2",
           "Microsoft.NETCore.Portable.Compatibility": "1.0.2",
           "Microsoft.NETCore.Runtime.CoreCLR": "1.0.3",
           "Microsoft.NETCore.Targets": "1.0.2",
-          "Microsoft.Net.Native.Compiler": "1.6.0",
+          "Microsoft.Net.Native.Compiler": "1.6.1",
           "Microsoft.Win32.Primitives": "4.0.1",
           "System.Collections.NonGeneric": "4.0.1",
           "System.Collections.Specialized": "4.0.1",
@@ -18082,16 +18513,16 @@
           "lib/netstandard1.3/System.Collections.NonGeneric.dll": {}
         }
       },
-      "System.Collections.Specialized/4.0.1": {
+      "System.Collections.Specialized/4.3.0": {
         "type": "package",
         "dependencies": {
-          "System.Collections.NonGeneric": "4.0.1",
-          "System.Globalization": "4.0.11",
-          "System.Globalization.Extensions": "4.0.1",
-          "System.Resources.ResourceManager": "4.0.1",
-          "System.Runtime": "4.1.0",
-          "System.Runtime.Extensions": "4.1.0",
-          "System.Threading": "4.0.11"
+          "System.Collections.NonGeneric": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Globalization.Extensions": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Threading": "4.3.0"
         },
         "compile": {
           "ref/netstandard1.3/System.Collections.Specialized.dll": {}
@@ -18147,6 +18578,27 @@
         },
         "runtime": {
           "lib/netcore50/System.ComponentModel.EventBasedAsync.dll": {}
+        }
+      },
+      "System.ComponentModel.Primitives/4.3.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard1.0/System.ComponentModel.Primitives.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/System.ComponentModel.Primitives.dll": {}
+        }
+      },
+      "System.ComponentModel.TypeConverter/4.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.ComponentModel.Primitives": "4.3.0"
+        },
+        "compile": {
+          "ref/netstandard1.0/System.ComponentModel.TypeConverter.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/System.ComponentModel.TypeConverter.dll": {}
         }
       },
       "System.Console/4.3.0": {
@@ -19741,18 +20193,50 @@
           "runtimes/aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "PriceCheck.DAL/1.0.0": {
+      "PriceCheck.Business/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "AutoMapper": "6.0.2",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2",
+          "PriceCheck.Data": "1.0.0",
+          "PriceCheck.Domain": "1.0.0"
+        }
+      },
+      "PriceCheck.Data/1.0.0": {
         "type": "project",
         "framework": "UAP,Version=v10.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Sqlite": "1.1.1",
           "Microsoft.EntityFrameworkCore.Tools": "1.1.0",
-          "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.1"
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2"
+        }
+      },
+      "PriceCheck.Domain/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2"
         }
       }
     }
   },
   "libraries": {
+    "AutoMapper/6.0.2": {
+      "sha512": "uI4uPyibgP4+2zn21fVqy0ep+eYeB5IcfjanyUESj+F0qcrOYpAW4iH2+xKET0vfhgJn4U1c4xN3stKUhygTmQ==",
+      "type": "package",
+      "path": "automapper/6.0.2",
+      "files": [
+        "automapper.6.0.2.nupkg.sha512",
+        "automapper.nuspec",
+        "lib/net45/AutoMapper.dll",
+        "lib/net45/AutoMapper.xml",
+        "lib/netstandard1.1/AutoMapper.dll",
+        "lib/netstandard1.1/AutoMapper.xml",
+        "lib/netstandard1.3/AutoMapper.dll",
+        "lib/netstandard1.3/AutoMapper.xml"
+      ]
+    },
     "Microsoft.AspNetCore.Hosting.Abstractions/1.1.1": {
       "sha512": "m93r3mNu/igz8YLJ6ra01FeMdKp0s+UKoq5WGqRZ6M9iJJO6TDyLMU+xE9HfsKeSKq6apPJOHDakjRJU2+e+PQ==",
       "type": "package",
@@ -20076,14 +20560,14 @@
         "microsoft.extensions.primitives.nuspec"
       ]
     },
-    "Microsoft.Net.Native.Compiler/1.6.0": {
-      "sha512": "ZWKiTdHteE3oSVoD6y2wb2k//Om2M5oMx8qIHXUbYdCCXvGL8isMnlwfIKmeft3L57imGDwd8PknuE588I4KeA==",
+    "Microsoft.Net.Native.Compiler/1.6.1": {
+      "sha512": "Xi4AB0vkO7o8krFGdl5XWXsG2lIljmIqdBc+XMi338Kp4iv57Y3j129d3gQeTikRduAsQ1uqEXUwogDfmkqtWA==",
       "type": "package",
-      "path": "microsoft.net.native.compiler/1.6.0",
+      "path": "microsoft.net.native.compiler/1.6.1",
       "files": [
         "build/Microsoft.Net.Native.Compiler.props",
         "build/Microsoft.Net.Native.Compiler.targets",
-        "microsoft.net.native.compiler.1.6.0.nupkg.sha512",
+        "microsoft.net.native.compiler.1.6.1.nupkg.sha512",
         "microsoft.net.native.compiler.nuspec",
         "tools/LibraryXML/Callisto.rd.xml",
         "tools/LibraryXML/GalaSoft.MvvmLight.Extras.Win8.rd.xml",
@@ -20972,7 +21456,7 @@
       ]
     },
     "Microsoft.Net.Native.SharedLibrary-arm/1.6.0": {
-      "sha512": "6tms4tVQoedKirFMs8q6qCLESDW3uAmFLWwUOB4lKDGtN+MHktTvA+VomsOWYtI//ByH1VSCIBvHVIqiNY8HXQ==",
+      "sha512": "ChcAhKNCiys3rLMuB+bPgEzE/9F8PRR8zDbgbY0TCN779DXI7VGcTYoJRLHI2ilaYbrQN4CPYQbaAk7B9DNQPQ==",
       "type": "package",
       "path": "microsoft.net.native.sharedlibrary-arm/1.6.0",
       "files": [
@@ -21372,7 +21856,7 @@
       ]
     },
     "Microsoft.Net.Native.SharedLibrary-x64/1.6.0": {
-      "sha512": "pLNmswGR+pzjLOgq+0oABz3e2C5XjSmTo81MFPSN9CeKyYiMb2eybU1fJRjyk86XFMfENK26gGUSVMhAo4zH/g==",
+      "sha512": "iGRwIqFwc2zH1iRjjWKzVHcu9Ri2A/5F9Zozu/BwtVaBYv2bc+mPHzfEg2dTeE5IrZ9jDqPOUCPXChHxirQ2bg==",
       "type": "package",
       "path": "microsoft.net.native.sharedlibrary-x64/1.6.0",
       "files": [
@@ -21772,7 +22256,7 @@
       ]
     },
     "Microsoft.Net.Native.SharedLibrary-x86/1.6.0": {
-      "sha512": "AC1O3na4oqgWdvjoMjVPvt2vCO9VESTkArknbTlep5NWVRdMU2nay4XHYWBleOhweE2kw52kJHv1BGN0dcXjhQ==",
+      "sha512": "peP8zi7V5K7I8bSH3m1aIW4syZahCenajymxymU4eCIDhPFPz7ZwQB8IoFb5M2Y1DTJPKGbXuPd2MV3x4eFMeg==",
       "type": "package",
       "path": "microsoft.net.native.sharedlibrary-x86/1.6.0",
       "files": [
@@ -22314,14 +22798,14 @@
         "runtime.json"
       ]
     },
-    "Microsoft.NETCore.UniversalWindowsPlatform/5.3.1": {
-      "sha512": "pYCI0GC3pt29yFzhboHYnWmTIjaJ2K/L/aPNOHshrM1yQojxIp8cYdcDDd27r4GCSrSnkELVJ/x38OF06jqdmQ==",
+    "Microsoft.NETCore.UniversalWindowsPlatform/5.3.2": {
+      "sha512": "bkCwDauf84lNL4BOXwa6+LWmimtAroK9TtdTrAlrMU4q0RipFnMx1mIpQBVZ9tqc6fD2B8BaqoqDRFlodcF6TA==",
       "type": "package",
-      "path": "microsoft.netcore.universalwindowsplatform/5.3.1",
+      "path": "microsoft.netcore.universalwindowsplatform/5.3.2",
       "files": [
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
-        "microsoft.netcore.universalwindowsplatform.5.3.1.nupkg.sha512",
+        "microsoft.netcore.universalwindowsplatform.5.3.2.nupkg.sha512",
         "microsoft.netcore.universalwindowsplatform.nuspec"
       ]
     },
@@ -23813,13 +24297,11 @@
         "system.collections.nongeneric.nuspec"
       ]
     },
-    "System.Collections.Specialized/4.0.1": {
-      "sha512": "/HKQyVP0yH1I0YtK7KJL/28snxHNH/bi+0lgk/+MbURF6ULhAE31MDI+NZDerNWu264YbxklXCCygISgm+HMug==",
+    "System.Collections.Specialized/4.3.0": {
+      "sha512": "Epx8PoVZR0iuOnJJDzp7pWvdfMMOAvpUo95pC4ScH2mJuXkKA2Y4aR3cG9qt2klHgSons1WFh4kcGW7cSXvrxg==",
       "type": "package",
-      "path": "system.collections.specialized/4.0.1",
+      "path": "system.collections.specialized/4.3.0",
       "files": [
-        "System.Collections.Specialized.4.0.1.nupkg.sha512",
-        "System.Collections.Specialized.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -23847,7 +24329,9 @@
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._"
+        "ref/xamarinwatchos10/_._",
+        "system.collections.specialized.4.3.0.nupkg.sha512",
+        "system.collections.specialized.nuspec"
       ]
     },
     "System.ComponentModel/4.3.0": {
@@ -24050,6 +24534,94 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._"
+      ]
+    },
+    "System.ComponentModel.Primitives/4.3.0": {
+      "sha512": "j8GUkCpM8V4d4vhLIIoBLGey2Z5bCkMVNjEZseyAlm4n5arcsJOeI3zkUP+zvZgzsbLTYh4lYeP/ZD/gdIAPrw==",
+      "type": "package",
+      "path": "system.componentmodel.primitives/4.3.0",
+      "files": [
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/System.ComponentModel.Primitives.dll",
+        "lib/netstandard1.0/System.ComponentModel.Primitives.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/System.ComponentModel.Primitives.dll",
+        "ref/netstandard1.0/System.ComponentModel.Primitives.dll",
+        "ref/netstandard1.0/System.ComponentModel.Primitives.xml",
+        "ref/netstandard1.0/de/System.ComponentModel.Primitives.xml",
+        "ref/netstandard1.0/es/System.ComponentModel.Primitives.xml",
+        "ref/netstandard1.0/fr/System.ComponentModel.Primitives.xml",
+        "ref/netstandard1.0/it/System.ComponentModel.Primitives.xml",
+        "ref/netstandard1.0/ja/System.ComponentModel.Primitives.xml",
+        "ref/netstandard1.0/ko/System.ComponentModel.Primitives.xml",
+        "ref/netstandard1.0/ru/System.ComponentModel.Primitives.xml",
+        "ref/netstandard1.0/zh-hans/System.ComponentModel.Primitives.xml",
+        "ref/netstandard1.0/zh-hant/System.ComponentModel.Primitives.xml",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.componentmodel.primitives.4.3.0.nupkg.sha512",
+        "system.componentmodel.primitives.nuspec"
+      ]
+    },
+    "System.ComponentModel.TypeConverter/4.3.0": {
+      "sha512": "16pQ6P+EdhcXzPiEK4kbA953Fu0MNG2ovxTZU81/qsCd1zPRsKc3uif5NgvllCY598k6bI0KUyKW8fanlfaDQg==",
+      "type": "package",
+      "path": "system.componentmodel.typeconverter/4.3.0",
+      "files": [
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/System.ComponentModel.TypeConverter.dll",
+        "lib/net462/System.ComponentModel.TypeConverter.dll",
+        "lib/netstandard1.0/System.ComponentModel.TypeConverter.dll",
+        "lib/netstandard1.5/System.ComponentModel.TypeConverter.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/System.ComponentModel.TypeConverter.dll",
+        "ref/net462/System.ComponentModel.TypeConverter.dll",
+        "ref/netstandard1.0/System.ComponentModel.TypeConverter.dll",
+        "ref/netstandard1.0/System.ComponentModel.TypeConverter.xml",
+        "ref/netstandard1.0/de/System.ComponentModel.TypeConverter.xml",
+        "ref/netstandard1.0/es/System.ComponentModel.TypeConverter.xml",
+        "ref/netstandard1.0/fr/System.ComponentModel.TypeConverter.xml",
+        "ref/netstandard1.0/it/System.ComponentModel.TypeConverter.xml",
+        "ref/netstandard1.0/ja/System.ComponentModel.TypeConverter.xml",
+        "ref/netstandard1.0/ko/System.ComponentModel.TypeConverter.xml",
+        "ref/netstandard1.0/ru/System.ComponentModel.TypeConverter.xml",
+        "ref/netstandard1.0/zh-hans/System.ComponentModel.TypeConverter.xml",
+        "ref/netstandard1.0/zh-hant/System.ComponentModel.TypeConverter.xml",
+        "ref/netstandard1.5/System.ComponentModel.TypeConverter.dll",
+        "ref/netstandard1.5/System.ComponentModel.TypeConverter.xml",
+        "ref/netstandard1.5/de/System.ComponentModel.TypeConverter.xml",
+        "ref/netstandard1.5/es/System.ComponentModel.TypeConverter.xml",
+        "ref/netstandard1.5/fr/System.ComponentModel.TypeConverter.xml",
+        "ref/netstandard1.5/it/System.ComponentModel.TypeConverter.xml",
+        "ref/netstandard1.5/ja/System.ComponentModel.TypeConverter.xml",
+        "ref/netstandard1.5/ko/System.ComponentModel.TypeConverter.xml",
+        "ref/netstandard1.5/ru/System.ComponentModel.TypeConverter.xml",
+        "ref/netstandard1.5/zh-hans/System.ComponentModel.TypeConverter.xml",
+        "ref/netstandard1.5/zh-hant/System.ComponentModel.TypeConverter.xml",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.componentmodel.typeconverter.4.3.0.nupkg.sha512",
+        "system.componentmodel.typeconverter.nuspec"
       ]
     },
     "System.Console/4.3.0": {
@@ -28672,15 +29244,25 @@
         "runtimes/aot/lib/netcore50/System.Xml.XmlSerializer.dll"
       ]
     },
-    "PriceCheck.DAL/1.0.0": {
+    "PriceCheck.Business/1.0.0": {
+      "type": "project",
+      "path": "../PriceCheck.Business/project.json",
+      "msbuildProject": "../PriceCheck.Business/PriceCheck.Business.csproj"
+    },
+    "PriceCheck.Data/1.0.0": {
       "type": "project",
       "path": "../PriceCheck.DAL/project.json",
-      "msbuildProject": "../PriceCheck.DAL/PriceCheck.DAL.csproj"
+      "msbuildProject": "../PriceCheck.DAL/PriceCheck.Data.csproj"
+    },
+    "PriceCheck.Domain/1.0.0": {
+      "type": "project",
+      "path": "../PriceCheck.Domain/project.json",
+      "msbuildProject": "../PriceCheck.Domain/PriceCheck.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "": [
-      "Microsoft.NETCore.UniversalWindowsPlatform >= 5.3.1"
+      "Microsoft.NETCore.UniversalWindowsPlatform >= 5.3.2"
     ],
     "UAP,Version=v10.0": []
   },
@@ -28697,15 +29279,18 @@
       "frameworks": {
         "uap10.0": {
           "projectReferences": {
-            "E:\\OneDrive\\Work\\PriceCheckUWP\\PriceCheckUWP\\PriceCheck.DAL\\PriceCheck.DAL.csproj": {
-              "projectPath": "E:\\OneDrive\\Work\\PriceCheckUWP\\PriceCheckUWP\\PriceCheck.DAL\\PriceCheck.DAL.csproj"
+            "E:\\OneDrive\\Work\\PriceCheckUWP\\PriceCheckUWP\\PriceCheck.Business\\PriceCheck.Business.csproj": {
+              "projectPath": "E:\\OneDrive\\Work\\PriceCheckUWP\\PriceCheckUWP\\PriceCheck.Business\\PriceCheck.Business.csproj"
+            },
+            "E:\\OneDrive\\Work\\PriceCheckUWP\\PriceCheckUWP\\PriceCheck.Domain\\PriceCheck.Domain.csproj": {
+              "projectPath": "E:\\OneDrive\\Work\\PriceCheckUWP\\PriceCheckUWP\\PriceCheck.Domain\\PriceCheck.Domain.csproj"
             }
           }
         }
       }
     },
     "dependencies": {
-      "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.1"
+      "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2"
     },
     "frameworks": {
       "uap10.0": {}

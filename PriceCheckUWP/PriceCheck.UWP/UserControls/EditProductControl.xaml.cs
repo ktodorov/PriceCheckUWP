@@ -17,31 +17,28 @@ using Windows.UI.Xaml.Navigation;
 
 namespace PriceCheck.UWP.UserControls
 {
-    public sealed partial class AddProductControl : UserControl
+    public sealed partial class EditProductControl : UserControl
     {
-        public event EventHandler OperationCompleted;
-
-        public AddProductControl()
-        {
-            this.InitializeComponent();
-            //DataContext = Product;
-        }
+        //public EditProductControl(Product productEntity)
+        //{
+        //    this.InitializeComponent();
+        //    Product = Mapper.Map<ProductModel>(productEntity);
+        //    DataContext = Product;
+        //}
 
         private async void saveButton_Click(object sender, RoutedEventArgs e)
         {
-            //using (var priceCheckContext = new PriceCheckContext())
+            //using (var priceChangeContext = new PriceCheckContext())
             //{
-            //    var newProduct = Mapper.Map<Product>(Product);
-            //    priceCheckContext.Products.Add(newProduct);
-            //    await priceCheckContext.SaveChangesAsync();
+            //    var productEntity = Mapper.Map<Product>(Product);
+            //    priceChangeContext.Products.Update(productEntity);
+            //    await priceChangeContext.SaveChangesAsync();
             //}
-
-            OperationCompleted?.Invoke(this, new EventArgs());
         }
 
         private void cancelButton_Click(object sender, RoutedEventArgs e)
         {
-            OperationCompleted?.Invoke(this, new EventArgs());
+
         }
     }
 }

@@ -1,11 +1,11 @@
-﻿using PriceCheck.DAL.Enums;
+﻿using PriceCheck.Data.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PriceCheck.DAL.Entities
+namespace PriceCheck.Data.Entities
 {
     public class Product : EntityBase
     {
@@ -13,7 +13,7 @@ namespace PriceCheck.DAL.Entities
 
         public string Url { get; set; }
 
-        public Website Website { get; set; }
+        public Website? Website { get; set; }
 
         public string Description { get; set; }
 

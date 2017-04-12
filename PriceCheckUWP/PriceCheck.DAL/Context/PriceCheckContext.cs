@@ -1,12 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PriceCheck.DAL.Entities;
+using PriceCheck.Data.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PriceCheck.DAL.Context
+namespace PriceCheck.Data.Context
 {
     public class PriceCheckContext : DbContext
     {

@@ -3,13 +3,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using PriceCheck.DAL.Context;
-using PriceCheck.DAL.Enums;
+using PriceCheck.Data.Context;
 
-namespace PriceCheck.DAL.Migrations
+namespace PriceCheck.Data.Migrations
 {
     [DbContext(typeof(PriceCheckContext))]
-    [Migration("20170318133150_InitialCreate")]
+    [Migration("20170319095803_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,6 +20,10 @@ namespace PriceCheck.DAL.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("DateCreated");
+
+                    b.Property<DateTime>("DateModified");
 
                     b.Property<double>("NewPrice");
 
@@ -40,13 +43,17 @@ namespace PriceCheck.DAL.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<DateTime>("DateCreated");
+
+                    b.Property<DateTime>("DateModified");
+
                     b.Property<string>("Description");
 
                     b.Property<string>("Name");
 
                     b.Property<string>("Url");
 
-                    b.Property<int>("Website");
+                    b.Property<int?>("Website");
 
                     b.HasKey("Id");
 
