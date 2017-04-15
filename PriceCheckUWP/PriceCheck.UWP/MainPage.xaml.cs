@@ -58,17 +58,28 @@ namespace PriceCheck.UWP
 
         private void addProductButton_Click(object sender, RoutedEventArgs e)
         {
-            var addProductControl = new AddProductControl();
+            var addProductControl = new EditProductControl();
             addProductControl.OperationCompleted += AddProductControl_OperationCompleted;
+            addProductControl.CanceledOperation += AddProductControl_CanceledOperation;
             dialogPopup.Child = addProductControl;
             dialogPopup.IsOpen = true;
         }
 
+        private void AddProductControl_CanceledOperation(object sender, EventArgs e)
+        {
+            HideDialog();
+        }
+
         private async void AddProductControl_OperationCompleted(object sender, EventArgs e)
+        {
+            HideDialog();
+            await RefreshProductsAsync();
+        }
+
+        private void HideDialog()
         {
             dialogPopup.Child = null;
             dialogPopup.IsOpen = false;
-            await RefreshProductsAsync();
         }
     }
 }

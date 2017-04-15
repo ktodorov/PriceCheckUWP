@@ -25,23 +25,40 @@ namespace PriceCheck.UWP.UserControls
     {
         IProductCommandService productCommandService;
 
-        ProductModel Product;
-
         public event EventHandler OperationCompleted;
         public event EventHandler CanceledOperation;
 
-        public EditProductControl(ProductModel productModel)
+        ProductModel Product;
+        private bool isNew;
+
+        public EditProductControl(ProductModel productModel = null)
         {
             this.InitializeComponent();
             productCommandService = new ProductCommandService();
+            if (productModel == null)
+            {
+                Product = new ProductModel();
+                isNew = true;
+            }
+            else
+            {
+                Product = productModel;
+                isNew = false;
+            }
 
-            Product = productModel;
             DataContext = Product;
         }
 
         private async void saveButton_Click(object sender, RoutedEventArgs e)
         {
-            await productCommandService.UpdateProductAsync(Product);
+            if (isNew)
+            {
+                await productCommandService.AddProductAsync(Product);
+            }
+            else
+            {
+                await productCommandService.UpdateProductAsync(Product);
+            }
             OperationCompleted?.Invoke(this, new EventArgs());
         }
 

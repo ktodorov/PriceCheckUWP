@@ -49,7 +49,6 @@ namespace PriceCheck.UWP.UserControls
         private async void deleteProductButton_Click(object sender, RoutedEventArgs e)
         {
             await productCommandService.DeleteProductAsync(AttachedProduct);
-
             ((Panel)this.Parent).Children.Remove(this);
         }
 
