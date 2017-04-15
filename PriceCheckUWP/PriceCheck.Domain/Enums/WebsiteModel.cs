@@ -8,9 +8,10 @@ namespace PriceCheck.Domain.Enums
 {
     public enum WebsiteModel
     {
-        Emag = 0,
-        Technopolis = 1,
-        Technomarket = 2,
-        Ebay = 3
+        None = 0,
+        Emag = 1,
+        Technopolis = 2,
+        Technomarket = 3,
+        Ebay = 4
     }
 }

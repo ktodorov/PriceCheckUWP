@@ -13,7 +13,7 @@ namespace PriceCheck.Data.Entities
 
         public string Url { get; set; }
 
-        public Website? Website { get; set; }
+        public Website Website { get; set; }
 
         public string Description { get; set; }
 

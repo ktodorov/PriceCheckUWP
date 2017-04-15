@@ -109,9 +109,11 @@
   <ItemGroup>
     <Compile Include="Configuration\AutoMapperConfiguration.cs" />
     <Compile Include="Configuration\DatabaseConfiguration.cs" />
-    <Compile Include="Interfaces\IProductService.cs" />
+    <Compile Include="Interfaces\Command\IProductCommandService.cs" />
+    <Compile Include="Interfaces\Query\IProductQueryService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\ProductService.cs" />
+    <Compile Include="Services\Command\ProductCommandService.cs" />
+    <Compile Include="Services\Query\ProductQueryService.cs" />
     <EmbeddedResource Include="Properties\PriceCheck.Business.rd.xml" />
   </ItemGroup>
   <ItemGroup>

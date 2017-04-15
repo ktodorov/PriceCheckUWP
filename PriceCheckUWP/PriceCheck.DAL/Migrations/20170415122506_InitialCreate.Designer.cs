@@ -4,11 +4,12 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using PriceCheck.Data.Context;
+using PriceCheck.Data.Enums;
 
-namespace PriceCheck.Data.Migrations
+namespace PriceCheck.Core.Migrations
 {
     [DbContext(typeof(PriceCheckContext))]
-    [Migration("20170319095803_InitialCreate")]
+    [Migration("20170415122506_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -16,7 +17,7 @@ namespace PriceCheck.Data.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.1");
 
-            modelBuilder.Entity("PriceCheck.DAL.Entities.PriceChange", b =>
+            modelBuilder.Entity("PriceCheck.Data.Entities.PriceChange", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -38,7 +39,7 @@ namespace PriceCheck.Data.Migrations
                     b.ToTable("PriceChanges");
                 });
 
-            modelBuilder.Entity("PriceCheck.DAL.Entities.Product", b =>
+            modelBuilder.Entity("PriceCheck.Data.Entities.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -53,16 +54,16 @@ namespace PriceCheck.Data.Migrations
 
                     b.Property<string>("Url");
 
-                    b.Property<int?>("Website");
+                    b.Property<int>("Website");
 
                     b.HasKey("Id");
 
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("PriceCheck.DAL.Entities.PriceChange", b =>
+            modelBuilder.Entity("PriceCheck.Data.Entities.PriceChange", b =>
                 {
-                    b.HasOne("PriceCheck.DAL.Entities.Product", "Product")
+                    b.HasOne("PriceCheck.Data.Entities.Product", "Product")
                         .WithMany("PriceChanges")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade);

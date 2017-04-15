@@ -10,11 +10,11 @@
     <Border Background="White">
         <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <TextBlock Name="tbProductNameLabel" Text="Name" />
-            <TextBox Name="tbProductName" />
+            <TextBox Name="tbProductName" Text="{Binding Name, Mode=TwoWay}"  />
             <TextBlock Name="tbProductUrlLabel" Text="URL" />
-            <TextBox Name="tbProductUrl" />
+            <TextBox Name="tbProductUrl" Text="{Binding Url, Mode=TwoWay}"  />
             <TextBlock Name="tbProductDescriptionLabel" Text="Description" />
-            <TextBox Name="tbProductDescription" />
+            <TextBox Name="tbProductDescription" Text="{Binding Description, Mode=TwoWay}" />
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button Name="saveButton" Content="Save" Margin="10" Click="saveButton_Click" />

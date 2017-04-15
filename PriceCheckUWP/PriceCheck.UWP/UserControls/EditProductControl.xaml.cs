@@ -1,4 +1,8 @@
-﻿using System;
+﻿using PriceCheck.Business.Interfaces.Command;
+using PriceCheck.Business.Services.Command;
+using PriceCheck.Domain.Models;
+using PriceCheck.UWP.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -17,28 +21,33 @@ using Windows.UI.Xaml.Navigation;
 
 namespace PriceCheck.UWP.UserControls
 {
-    public sealed partial class EditProductControl : UserControl
+    public sealed partial class EditProductControl : UserControl, IOperationControl
     {
-        //public EditProductControl(Product productEntity)
-        //{
-        //    this.InitializeComponent();
-        //    Product = Mapper.Map<ProductModel>(productEntity);
-        //    DataContext = Product;
-        //}
+        IProductCommandService productCommandService;
+
+        ProductModel Product;
+
+        public event EventHandler OperationCompleted;
+        public event EventHandler CanceledOperation;
+
+        public EditProductControl(ProductModel productModel)
+        {
+            this.InitializeComponent();
+            productCommandService = new ProductCommandService();
+
+            Product = productModel;
+            DataContext = Product;
+        }
 
         private async void saveButton_Click(object sender, RoutedEventArgs e)
         {
-            //using (var priceChangeContext = new PriceCheckContext())
-            //{
-            //    var productEntity = Mapper.Map<Product>(Product);
-            //    priceChangeContext.Products.Update(productEntity);
-            //    await priceChangeContext.SaveChangesAsync();
-            //}
+            await productCommandService.UpdateProductAsync(Product);
+            OperationCompleted?.Invoke(this, new EventArgs());
         }
 
         private void cancelButton_Click(object sender, RoutedEventArgs e)
         {
-
+            CanceledOperation?.Invoke(this, new EventArgs());
         }
     }
 }

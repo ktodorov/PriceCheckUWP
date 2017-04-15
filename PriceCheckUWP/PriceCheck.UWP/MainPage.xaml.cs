@@ -1,9 +1,14 @@
-﻿using PriceCheck.UWP.UserControls;
+﻿using PriceCheck.Business.Interfaces;
+using PriceCheck.Business.Interfaces.Query;
+using PriceCheck.Business.Services;
+using PriceCheck.Business.Services.Query;
+using PriceCheck.UWP.UserControls;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -23,31 +28,32 @@ namespace PriceCheck.UWP
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        IProductQueryService productService;
+
         public MainPage()
         {
             this.InitializeComponent();
+
+            productService = new ProductQueryService();
         }
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
+        private async void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            LoadProducts();
+            await RefreshProductsAsync();
         }
 
-        private void LoadProducts()
+        private async Task RefreshProductsAsync()
         {
             spProducts.Children.Clear();
 
-            //using (var db = new PriceCheckContext())
-            //{
-            //    var currentProducts = db.Products.ToList();
-            //    foreach (var product in currentProducts)
-            //    {
-            //        var productControl = new ProductControl(product);
-            //        spProducts.Children.Add(productControl);
-            //    }
+            var currentProducts = await productService.GetAllProductsAsync();
+            foreach (var product in currentProducts)
+            {
+                var productControl = new ProductControl(product);
+                spProducts.Children.Add(productControl);
+            }
 
-            //    tbSummary.Text = $"All products: {currentProducts.Count}";
-            //}
+            tbSummary.Text = $"All products: {currentProducts.Count}";
         }
 
         private void addProductButton_Click(object sender, RoutedEventArgs e)
@@ -58,11 +64,11 @@ namespace PriceCheck.UWP
             dialogPopup.IsOpen = true;
         }
 
-        private void AddProductControl_OperationCompleted(object sender, EventArgs e)
+        private async void AddProductControl_OperationCompleted(object sender, EventArgs e)
         {
             dialogPopup.Child = null;
             dialogPopup.IsOpen = false;
-            LoadProducts();
+            await RefreshProductsAsync();
         }
     }
 }

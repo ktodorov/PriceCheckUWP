@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace PriceCheck.Data.Migrations
+namespace PriceCheck.Core.Migrations
 {
     public partial class InitialCreate : Migration
     {
@@ -19,7 +19,7 @@ namespace PriceCheck.Data.Migrations
                     Description = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Url = table.Column<string>(nullable: true),
-                    Website = table.Column<int>(nullable: true)
+                    Website = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {

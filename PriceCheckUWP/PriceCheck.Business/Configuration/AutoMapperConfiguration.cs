@@ -17,11 +17,23 @@ namespace PriceCheck.Business.Configuration
         {
             Mapper.Initialize(config =>
             {
-                config.CreateMap<Product, ProductModel>().ForMember(dest => dest.Website, opt => opt.MapFrom(x => (WebsiteModel)(int)x.Website));
-                config.CreateMap<ProductModel, Product>().ForMember(dest => dest.Website, opt => opt.MapFrom(x => (Website)(int)x.Website));
+                config.CreateMap<Product, ProductModel>().ForMember(dest => dest.Website, opt => opt.MapFrom(x => ConvertEnumValue<Website, WebsiteModel>(x.Website))); // (WebsiteModel?)(int?)x.Website));
+                config.CreateMap<ProductModel, Product>().ForMember(dest => dest.Website, opt => opt.MapFrom(x => ConvertEnumValue<WebsiteModel, Website>(x.Website))); //(Website?)(int?)x.Website));
                 config.CreateMap<PriceChange, PriceChangeModel>().ForMember(dest => dest.Product, opt => opt.Ignore());
                 config.CreateMap<PriceChangeModel, PriceChange>();
             });
+        }
+
+        private static DestinationEnum? ConvertEnumValue<SourceEnum, DestinationEnum>(SourceEnum? sourceValue) where DestinationEnum: struct, IConvertible 
+                                                                                                                         where SourceEnum: struct, IConvertible
+        {
+            if (sourceValue == null)
+            {
+                return null;
+            }
+
+            var parsedValue = (DestinationEnum)Enum.Parse(typeof(DestinationEnum), sourceValue.ToString());
+            return parsedValue;
         }
     }
 }

@@ -44,8 +44,8 @@ namespace PriceCheck.Domain.Models
             }
         }
 
-        private WebsiteModel? website;
-        public WebsiteModel? Website
+        private WebsiteModel website;
+        public WebsiteModel Website
         {
             get
             {

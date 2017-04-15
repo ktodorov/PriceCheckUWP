@@ -112,9 +112,9 @@
     <Compile Include="Entities\PriceChange.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Enums\Website.cs" />
-    <Compile Include="Migrations\20170319095803_InitialCreate.cs" />
-    <Compile Include="Migrations\20170319095803_InitialCreate.designer.cs">
-      <DependentUpon>20170319095803_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\20170415122506_InitialCreate.cs" />
+    <Compile Include="Migrations\20170415122506_InitialCreate.designer.cs">
+      <DependentUpon>20170415122506_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\PriceCheckContextModelSnapshot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
