@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using PriceCheck.Domain.Models;
 using PriceCheck.Data.Context;
 using AutoMapper;
+using PriceCheck.Data.Entities;
 
 namespace PriceCheck.Business.Services
 {
