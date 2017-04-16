@@ -13,20 +13,12 @@
           HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <Grid.RowDefinitions>
             <RowDefinition Height="100" />
-            <RowDefinition Height="50" />
             <RowDefinition Height="*" />
             <RowDefinition Height="50" />
         </Grid.RowDefinitions>
 
         <TextBlock Name="tbAppHeader" Grid.Row="0" Text="PriceCheckUWP" FontWeight="Bold" />
 
-        <Button Name="addProductButton" Grid.Row="1" Content="Add" Click="addProductButton_Click" />
-
-        <StackPanel Name="spProducts" Grid.Row="2" Orientation="Vertical">
-        </StackPanel>
-
-        <TextBlock Name="tbSummary" Grid.Row="3" Text="All products: 3" />
-
-        <Popup Name="dialogPopup" Grid.RowSpan="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <uc:ProductsList Grid.Row="1" x:Name="productsList" />
     </Grid>
 </Page>

@@ -25,11 +25,19 @@ namespace PriceCheck.Business.Services.Query
             }
         }
 
-        public async Task<List<ProductModel>> GetAllProductsAsync()
+        public async Task<List<ProductModel>> GetAllProductsAsync(string searchText)
         {
             using (var priceCheckContext = new PriceCheckContext())
             {
-                var products = await priceCheckContext.Products.ToListAsync();
+                var productsQuery = priceCheckContext.Products.AsQueryable();
+
+                if (!string.IsNullOrEmpty(searchText))
+                {
+                    var loweredSearchText = searchText.ToLower();
+                    productsQuery = productsQuery.Where(p => p.Name.ToLower().Contains(loweredSearchText));
+                }
+
+                var products = await productsQuery.ToListAsync();
                 var productModels = Mapper.Map<List<ProductModel>>(products);
                 return productModels;
             }

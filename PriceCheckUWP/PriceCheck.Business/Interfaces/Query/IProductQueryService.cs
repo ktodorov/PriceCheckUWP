@@ -11,7 +11,7 @@ namespace PriceCheck.Business.Interfaces.Query
     {
         Task<List<PriceChangeModel>> GetAllPriceChangesAsync();
 
-        Task<List<ProductModel>> GetAllProductsAsync();
+        Task<List<ProductModel>> GetAllProductsAsync(string searchText);
 
         Task<ProductModel> GetProductById(int id);
     }
