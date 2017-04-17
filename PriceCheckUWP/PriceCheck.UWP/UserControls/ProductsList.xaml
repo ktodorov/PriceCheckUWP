@@ -7,22 +7,28 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <Border Padding="5" BorderThickness="1" BorderBrush="Gray" Margin="5">
-        <StackPanel>
-            <StackPanel Orientation="Horizontal" Name="commandsPanel">
-                <Button Name="addProductButton" Content="Add" Click="addProductButton_Click" />
+        <Grid>
+            <StackPanel Name="mainPanel">
+                <StackPanel Orientation="Horizontal" Name="commandsPanel">
+                    <Button Name="addProductButton" Content="Add" Click="addProductButton_Click" Margin="5, 0"  />
 
-                <TextBox Name="tbSearch" Margin="5, 0" Text="{Binding Path=searchText, Mode=TwoWay}" />
-                <Button Name="searchButton" Content="Search" Click="searchButton_Click" />
-            </StackPanel>
+                    <TextBox Name="tbSearch" Margin="5, 0" Text="{Binding Path=searchText, Mode=TwoWay}" />
+                    <Button Name="searchButton" Content="Search" Click="searchButton_Click" Margin="5, 0" />
 
-            <Border Padding="5" BorderThickness="1" BorderBrush="DarkGray" Margin="5">
-                <StackPanel Name="spProducts" Orientation="Vertical">
+                    <ComboBox Name="cbSortType" SelectionChanged="cbSortType_SelectionChanged" Margin="5, 0" />
+                    <ComboBox Name="cbSortOrder" SelectionChanged="cbSortOrder_SelectionChanged" Margin="5, 0" />
                 </StackPanel>
-            </Border>
-            
-            <TextBlock Name="tbSummary" Text="All products: 3"/>
 
+                <Border Padding="5" BorderThickness="1" BorderBrush="DarkGray" Margin="5">
+                    <StackPanel Name="spProducts" Orientation="Vertical">
+                    </StackPanel>
+                </Border>
+
+                <TextBlock Name="tbSummary" Text="All products: 3"/>
+
+            </StackPanel>
+            
             <Popup Name="dialogPopup" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
-        </StackPanel>
+        </Grid>
     </Border>
 </UserControl>

@@ -1,7 +1,11 @@
 ﻿using PriceCheck.Business.Interfaces.Query;
 using PriceCheck.Business.Services.Query;
+using PriceCheck.Core.Enums;
+using PriceCheck.Core.Extensions;
 using System;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using System.Threading.Tasks;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -38,6 +42,18 @@ namespace PriceCheck.UWP.UserControls
             this.InitializeComponent();
 
             productService = new ProductQueryService();
+            LoadComboBoxes();
+        }
+
+        private void LoadComboBoxes()
+        {
+            var sortTypes = Enum.GetValues(typeof(SortType)).Cast<SortType>();
+            cbSortType.ItemsSource = sortTypes;
+            cbSortType.SelectedIndex = 0;
+
+            var sortOrders = Enum.GetValues(typeof(SortOrder)).Cast<SortOrder>();
+            cbSortOrder.ItemsSource = sortOrders;
+            cbSortOrder.SelectedIndex = 0;
         }
 
         private void OnPropertyChanged(string info)
@@ -49,7 +65,10 @@ namespace PriceCheck.UWP.UserControls
         {
             spProducts.Children.Clear();
 
-            var currentProducts = await productService.GetAllProductsAsync(searchText);
+            var selectedSortType = (SortType)(cbSortType.SelectedValue ?? SortType.Name);
+            var selectedSortOrder = (SortOrder)(cbSortOrder.SelectedValue ?? SortOrder.Ascending);
+
+            var currentProducts = await productService.GetAllProductsAsync(searchText, selectedSortType, selectedSortOrder);
             foreach (var product in currentProducts)
             {
                 var productControl = new ProductControl(product);
@@ -86,6 +105,16 @@ namespace PriceCheck.UWP.UserControls
         }
 
         private async void searchButton_Click(object sender, RoutedEventArgs e)
+        {
+            await RefreshProductsAsync();
+        }
+
+        private async void cbSortType_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            await RefreshProductsAsync();
+        }
+
+        private async void cbSortOrder_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             await RefreshProductsAsync();
         }

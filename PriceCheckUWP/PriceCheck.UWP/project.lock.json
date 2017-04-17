@@ -2844,8 +2844,17 @@
         "dependencies": {
           "AutoMapper": "6.0.2",
           "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2",
+          "PriceCheck.Core": "1.0.0",
           "PriceCheck.Data": "1.0.0",
           "PriceCheck.Domain": "1.0.0"
+        }
+      },
+      "PriceCheck.Core/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2",
+          "PriceCheck.Data": "1.0.0"
         }
       },
       "PriceCheck.Data/1.0.0": {
@@ -5711,8 +5720,17 @@
         "dependencies": {
           "AutoMapper": "6.0.2",
           "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2",
+          "PriceCheck.Core": "1.0.0",
           "PriceCheck.Data": "1.0.0",
           "PriceCheck.Domain": "1.0.0"
+        }
+      },
+      "PriceCheck.Core/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2",
+          "PriceCheck.Data": "1.0.0"
         }
       },
       "PriceCheck.Data/1.0.0": {
@@ -8617,8 +8635,17 @@
         "dependencies": {
           "AutoMapper": "6.0.2",
           "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2",
+          "PriceCheck.Core": "1.0.0",
           "PriceCheck.Data": "1.0.0",
           "PriceCheck.Domain": "1.0.0"
+        }
+      },
+      "PriceCheck.Core/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2",
+          "PriceCheck.Data": "1.0.0"
         }
       },
       "PriceCheck.Data/1.0.0": {
@@ -11493,8 +11520,17 @@
         "dependencies": {
           "AutoMapper": "6.0.2",
           "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2",
+          "PriceCheck.Core": "1.0.0",
           "PriceCheck.Data": "1.0.0",
           "PriceCheck.Domain": "1.0.0"
+        }
+      },
+      "PriceCheck.Core/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2",
+          "PriceCheck.Data": "1.0.0"
         }
       },
       "PriceCheck.Data/1.0.0": {
@@ -14408,8 +14444,17 @@
         "dependencies": {
           "AutoMapper": "6.0.2",
           "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2",
+          "PriceCheck.Core": "1.0.0",
           "PriceCheck.Data": "1.0.0",
           "PriceCheck.Domain": "1.0.0"
+        }
+      },
+      "PriceCheck.Core/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2",
+          "PriceCheck.Data": "1.0.0"
         }
       },
       "PriceCheck.Data/1.0.0": {
@@ -17284,8 +17329,17 @@
         "dependencies": {
           "AutoMapper": "6.0.2",
           "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2",
+          "PriceCheck.Core": "1.0.0",
           "PriceCheck.Data": "1.0.0",
           "PriceCheck.Domain": "1.0.0"
+        }
+      },
+      "PriceCheck.Core/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2",
+          "PriceCheck.Data": "1.0.0"
         }
       },
       "PriceCheck.Data/1.0.0": {
@@ -20199,8 +20253,17 @@
         "dependencies": {
           "AutoMapper": "6.0.2",
           "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2",
+          "PriceCheck.Core": "1.0.0",
           "PriceCheck.Data": "1.0.0",
           "PriceCheck.Domain": "1.0.0"
+        }
+      },
+      "PriceCheck.Core/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2",
+          "PriceCheck.Data": "1.0.0"
         }
       },
       "PriceCheck.Data/1.0.0": {
@@ -29249,10 +29312,15 @@
       "path": "../PriceCheck.Business/project.json",
       "msbuildProject": "../PriceCheck.Business/PriceCheck.Business.csproj"
     },
+    "PriceCheck.Core/1.0.0": {
+      "type": "project",
+      "path": "../PriceCheck.Core/project.json",
+      "msbuildProject": "../PriceCheck.Core/PriceCheck.Core.csproj"
+    },
     "PriceCheck.Data/1.0.0": {
       "type": "project",
-      "path": "../PriceCheck.DAL/project.json",
-      "msbuildProject": "../PriceCheck.DAL/PriceCheck.Data.csproj"
+      "path": "../PriceCheck.Data/project.json",
+      "msbuildProject": "../PriceCheck.Data/PriceCheck.Data.csproj"
     },
     "PriceCheck.Domain/1.0.0": {
       "type": "project",
@@ -29281,6 +29349,9 @@
           "projectReferences": {
             "E:\\OneDrive\\Work\\PriceCheckUWP\\PriceCheckUWP\\PriceCheck.Business\\PriceCheck.Business.csproj": {
               "projectPath": "E:\\OneDrive\\Work\\PriceCheckUWP\\PriceCheckUWP\\PriceCheck.Business\\PriceCheck.Business.csproj"
+            },
+            "E:\\OneDrive\\Work\\PriceCheckUWP\\PriceCheckUWP\\PriceCheck.Core\\PriceCheck.Core.csproj": {
+              "projectPath": "E:\\OneDrive\\Work\\PriceCheckUWP\\PriceCheckUWP\\PriceCheck.Core\\PriceCheck.Core.csproj"
             },
             "E:\\OneDrive\\Work\\PriceCheckUWP\\PriceCheckUWP\\PriceCheck.Domain\\PriceCheck.Domain.csproj": {
               "projectPath": "E:\\OneDrive\\Work\\PriceCheckUWP\\PriceCheckUWP\\PriceCheck.Domain\\PriceCheck.Domain.csproj"

@@ -10,6 +10,8 @@ using AutoMapper;
 using PriceCheck.Data.Entities;
 using PriceCheck.Business.Interfaces.Query;
 using Microsoft.EntityFrameworkCore;
+using PriceCheck.Core.Enums;
+using PriceCheck.Core.Extensions;
 
 namespace PriceCheck.Business.Services.Query
 {
@@ -25,7 +27,7 @@ namespace PriceCheck.Business.Services.Query
             }
         }
 
-        public async Task<List<ProductModel>> GetAllProductsAsync(string searchText)
+        public async Task<List<ProductModel>> GetAllProductsAsync(string searchText = null, SortType sortType = SortType.Name, SortOrder sortOrder = SortOrder.Ascending)
         {
             using (var priceCheckContext = new PriceCheckContext())
             {
@@ -36,6 +38,8 @@ namespace PriceCheck.Business.Services.Query
                     var loweredSearchText = searchText.ToLower();
                     productsQuery = productsQuery.Where(p => p.Name.ToLower().Contains(loweredSearchText));
                 }
+
+                productsQuery = productsQuery.Sort(sortType, sortOrder);
 
                 var products = await productsQuery.ToListAsync();
                 var productModels = Mapper.Map<List<ProductModel>>(products);

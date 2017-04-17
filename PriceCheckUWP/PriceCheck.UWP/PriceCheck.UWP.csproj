@@ -11,7 +11,7 @@
     <AssemblyName>PriceCheck.UWP</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion>10.0.14393.0</TargetPlatformVersion>
+    <TargetPlatformVersion>10.0.15063.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.10586.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
@@ -156,6 +156,10 @@
     <ProjectReference Include="..\PriceCheck.Business\PriceCheck.Business.csproj">
       <Project>{64780760-bf9d-4da2-bab8-926b8b7c6a6a}</Project>
       <Name>PriceCheck.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PriceCheck.Core\PriceCheck.Core.csproj">
+      <Project>{AA94A992-B74B-486E-A9FB-248F96D36D86}</Project>
+      <Name>PriceCheck.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\PriceCheck.Domain\PriceCheck.Domain.csproj">
       <Project>{24e0be19-c53f-4d27-b3e7-40763a27757f}</Project>

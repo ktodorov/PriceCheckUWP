@@ -1,4 +1,5 @@
-﻿using PriceCheck.Domain.Models;
+﻿using PriceCheck.Core.Enums;
+using PriceCheck.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace PriceCheck.Business.Interfaces.Query
     {
         Task<List<PriceChangeModel>> GetAllPriceChangesAsync();
 
-        Task<List<ProductModel>> GetAllProductsAsync(string searchText);
+        Task<List<ProductModel>> GetAllProductsAsync(string searchText = null, SortType sortType = SortType.Name, SortOrder sortOrder = SortOrder.Ascending);
 
         Task<ProductModel> GetProductById(int id);
     }

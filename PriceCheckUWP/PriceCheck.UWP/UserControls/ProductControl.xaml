@@ -16,22 +16,27 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*" />
             <ColumnDefinition Width="9*" />
+            <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
 
         <Image Name="productImage" Grid.RowSpan="3" Grid.Column="0" />
 
-        <TextBlock Name="tbProductName" Grid.Row="0" Grid.Column="1" FontWeight="Bold" Text="{Binding Name}" />
+        <TextBlock Name="tbProductName" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" 
+                   FontWeight="Bold" Text="{Binding Name}" />
 
-        <TextBlock Name="tbProductWebsite" Grid.Row="1" Grid.Column="1" FontStyle="Italic" Text="{Binding Website}" />
+        <TextBlock Name="tbProductWebsite" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
+                   FontStyle="Italic" Text="{Binding Website}" />
 
         <TextBlock Name="tbProductDescription" Grid.Row="2" Grid.Column="1" Text="{Binding Description}"/>
 
-        <StackPanel Grid.Column="2" Grid.RowSpan="3">
+        <TextBlock Name="tbProductDate" Grid.Row="2" Grid.Column="2" Text="{Binding DateCreated}" />
+
+        <StackPanel Grid.Column="3" Grid.RowSpan="3">
             <Button Name="editProductButton" Content="Edit" Click="editProductButton_Click" />
             <Button Name="deleteProductButton" Content="Delete" Click="deleteProductButton_Click" />
         </StackPanel>
 
-        <StackPanel Grid.RowSpan="3" Grid.ColumnSpan="3" Name="spEditView" Visibility="Collapsed"></StackPanel>
+        <StackPanel Grid.RowSpan="3" Grid.ColumnSpan="4" Name="spEditView" Visibility="Collapsed"></StackPanel>
     </Grid>
 </UserControl>
